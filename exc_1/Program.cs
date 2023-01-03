@@ -1,1 +1,11 @@
-﻿using MyMethods;
+﻿/*
+
+*/
+
+//тело программы
+
+using MyMethods;
+
+
+
+//методы

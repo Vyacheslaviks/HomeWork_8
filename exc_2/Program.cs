@@ -10,7 +10,7 @@ using MyMethods;
 int[,] array = Sl.GenerateRandomArrayInt(4, 4, 0, 9);
 Sl.PrintArray(array);
 
-Console.WriteLine($"Строка {SearchMinimalSumRows(array).Item1} имеет минимальную сумму элементов: {SearchMinimalSumRows(array).Item2}");
+Console.WriteLine($"Строка №{SearchMinimalSumRows(array).Item1 + 1} имеет минимальную сумму элементов: {SearchMinimalSumRows(array).Item2}");
 
 //методы
 
