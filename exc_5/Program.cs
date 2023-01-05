@@ -7,53 +7,52 @@
 using MyMethods;
 
 int[,] array = new int[4, 4];
-int i = 0;
-int j = 0;
-int k = 1;
-bool breaker = false;
+int i = 0; //строка массива
+int j = 0; //столбец массива
+int k = 10; //хначение элемента массива
 
 array[i, j] = k;
+k++;
 
-/*while (breaker == false)
+bool changes = true;
+
+
+while (changes == true)
 {
-    if ((i - 1 > 0) && (array[i - 1, j] == 0))
+    changes = false;
+
+    while (j + 1 < array.GetLength(1) && array[i, j + 1] == 0)
     {
-        array[i - 1, j] = k + 1;
-        i = i - 1;
-        k = k + 1;
+        array[i, j + 1] = k;
+        j++;
+        k++;
+        changes = true;
     }
-    else
+
+    while (i + 1 < array.GetLength(0) && array[i + 1, j] == 0)
     {
-        if ((j + 1 < array.GetLength(1)) && (array[i, j + 1] == 0))
-        {
-            array[i, j + 1] = k + 1;
-            j = j + 1;
-            k = k + 1;
-        }
-        else
-        {
-            if ((i + 1 < array.GetLength(0)) && (array[i + 1, j] == 0))
-            {
-                array[i + 1, j] = k + 1;
-                i++;
-                k = k + 1;
-            }
-            else
-            {
-                if ((j - 1 > 0) && (array[i, j - 1] == 0))
-                {
-                    array[i, j - 1] = k + 1;
-                    j--;
-                    k = k + 1;
-                }
-                else
-                {
-                    breaker = true;
-                }
-            }
-        }
+        array[i + 1, j] = k;
+        i++;
+        k++;
+        changes = true;
     }
-}*/
+
+    while (j - 1 >= 0 && array[i, j - 1] == 0)
+    {
+        array[i, j - 1] = k;
+        j--;
+        k++;
+        changes = true;
+    }
+
+    while (i - 1 >= 0 && array[i - 1, j] == 0)
+    {
+        array[i - 1, j] = k;
+        i--;
+        k++;
+        changes = true;
+    }
+}
 
 Sl.PrintArray(array);
 //методы
